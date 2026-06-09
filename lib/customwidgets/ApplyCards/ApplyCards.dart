@@ -5,11 +5,12 @@ class Applycards extends StatelessWidget {
     super.key,
     required this.icons,
     required this.text,
-    required this.desc,
+    required this.desc, required this.onTaps,
   });
   final IconData icons;
   final String text;
   final String desc;
+  final VoidCallback onTaps;
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +38,7 @@ class Applycards extends StatelessWidget {
           Expanded(child: Text(desc)),
           SizedBox(height: 30),
           InkWell(
-            onTap: () {
-              
-            },
+            onTap: onTaps,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [Text('APPLY'), Icon(Icons.arrow_right_alt)],

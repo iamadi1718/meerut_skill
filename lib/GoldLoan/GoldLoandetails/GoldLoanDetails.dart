@@ -1,0 +1,125 @@
+import 'package:flutter/material.dart';
+
+class GoldLoanDetails extends StatefulWidget {
+  const GoldLoanDetails({super.key});
+
+  @override
+  State<GoldLoanDetails> createState() => _GoldLoanDetailsState();
+}
+
+class _GoldLoanDetailsState extends State<GoldLoanDetails> {
+  String? selectedProof = "Monthly";
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(16),
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 16),
+      width: 406,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(width: 1, color: Colors.grey),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.white.withOpacity(0.25),
+            blurRadius: 4,
+            spreadRadius: 1,
+            offset: Offset(0, 0),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Loan Details:',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+          ),
+          SizedBox(height: 15),
+          Row(
+            children: [
+              Text('Amount Required'),
+              SizedBox(width: 5),
+              Expanded(
+                child: Container(
+                  width: 280,
+                  height: 25,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(width: 1),
+                  ),
+                  child: TextField(),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 15),
+          Row(
+            children: [
+              Text('Loan Tenure'),
+              SizedBox(width: 5),
+
+              Expanded(
+                child: Container(
+                  width: 280,
+                  height: 25,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(width: 1),
+                  ),
+                  child: TextField(),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 15),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text("Repayment Method:"),
+
+              Row(
+                children: [
+                  Radio<String>(
+                    value: "Monthly",
+                    groupValue: selectedProof,
+                    visualDensity: VisualDensity.compact,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedProof = value!;
+                      });
+                    },
+                  ),
+                  const Text("Monthly"),
+
+                  Radio<String>(
+                    value: "Quarterly",
+                    visualDensity: VisualDensity.compact,
+                    groupValue: selectedProof,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedProof = value!;
+                      });
+                    },
+                  ),
+                  const Text("Quarterly"),
+
+                  Radio<String>(
+                    value: "Bullet Payment",
+                    groupValue: selectedProof,
+                    visualDensity: VisualDensity.compact,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedProof = value!;
+                      });
+                    },
+                  ),
+                  const Text("Bullet"),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}

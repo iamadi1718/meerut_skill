@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:meerut_skill/Drawer/Drawer.dart';
+import 'package:meerut_skill/GoldLoan/GoldLoan.dart';
+import 'package:meerut_skill/GoldLoan/GoldLoandetails/GoldLoanDetails.dart';
 import 'package:meerut_skill/customwidgets/ApplyCards/ApplyCards.dart';
+import 'package:meerut_skill/personalLoan/PersonalLoan.dart';
 import 'package:meerut_skill/profilescreen/Profilepage.dart';
 
 class Applypage extends StatelessWidget {
@@ -110,23 +113,37 @@ class Applypage extends StatelessWidget {
                 childAspectRatio: 0.75,
                 children: [
                   Applycards(
+                    onTaps: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Personalloan()),
+                      );
+                    },
                     icons: Icons.bookmark,
                     text: 'Personal Loan',
                     desc: 'Up to 10 Lakh\n rupees, with instant\n approval',
                   ),
                   Applycards(
+                    onTaps: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Goldloan()),
+                      );
+                    },
                     icons: Icons.all_inbox_outlined,
                     text: 'Gold Loan',
                     desc:
                         'Interest rate starting\n with as low as 0.97%\n monthly',
                   ),
                   Applycards(
+                    onTaps: () {},
                     icons: Icons.work_outline,
                     text: 'Business Loan',
                     desc:
                         'Attractive interest\n rates, flexible\n repayment tenure,\n and ownership\n benefits',
                   ),
                   Applycards(
+                    onTaps: () {},
                     icons: Icons.home,
                     text: 'Home Loan',
                     desc:
