@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:meerut_skill/BusinessLoan/businessloan.dart';
 import 'package:meerut_skill/Drawer/Drawer.dart';
 import 'package:meerut_skill/GoldLoan/GoldLoan.dart';
-import 'package:meerut_skill/GoldLoan/GoldLoandetails/GoldLoanDetails.dart';
+import 'package:meerut_skill/homeloan/homeloan.dart';
 import 'package:meerut_skill/customwidgets/ApplyCards/ApplyCards.dart';
 import 'package:meerut_skill/personalLoan/PersonalLoan.dart';
-import 'package:meerut_skill/profilescreen/Profilepage.dart';
 
 class Applypage extends StatelessWidget {
   const Applypage({super.key});
@@ -136,14 +136,28 @@ class Applypage extends StatelessWidget {
                         'Interest rate starting\n with as low as 0.97%\n monthly',
                   ),
                   Applycards(
-                    onTaps: () {},
+                    onTaps: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const BusinessLoanPage(),
+                        ),
+                      );
+                    },
                     icons: Icons.work_outline,
                     text: 'Business Loan',
                     desc:
                         'Attractive interest\n rates, flexible\n repayment tenure,\n and ownership\n benefits',
                   ),
                   Applycards(
-                    onTaps: () {},
+                    onTaps: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeLoanPage(),
+                        ),
+                      );
+                    },
                     icons: Icons.home,
                     text: 'Home Loan',
                     desc:

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:meerut_skill/Drawer/Drawer.dart';
 import 'package:meerut_skill/applypage/Applypage.dart';
 import 'package:meerut_skill/customwidgets/BuildBullet/buildBullet.dart';
-import 'package:meerut_skill/profilescreen/Profilepage.dart';
 import 'package:meerut_skill/customwidgets/BuildItem/buildItem.dart';
 
 class Homepage extends StatelessWidget {
@@ -216,4 +215,3 @@ class Homepage extends StatelessWidget {
     );
   }
 }
-
