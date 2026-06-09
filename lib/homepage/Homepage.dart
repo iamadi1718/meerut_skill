@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:meerut_skill/Drawer/Drawer.dart';
+import 'package:meerut_skill/applypage/Applypage.dart';
 import 'package:meerut_skill/customwidgets/BuildBullet/buildBullet.dart';
 import 'package:meerut_skill/profilescreen/Profilepage.dart';
+import 'package:meerut_skill/customwidgets/BuildItem/buildItem.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -8,86 +11,7 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        width: MediaQuery.of(context).size.width * 0.70,
-        backgroundColor: Color(0xFF2E1A5E),
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(color: Color(0xFF2E1A5E)),
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Profilepage()));
-                },
-                child: CircleAvatar(
-                  radius: 25,
-                
-                  child: Icon(Icons.person, size: 40),
-                ),
-              ),
-            ),
-
-            Padding(
-              padding: EdgeInsets.all(15),
-              child: InkWell(
-                onTap: () {},
-                child: Text(
-                  'Chat Support',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-              ),
-            ),
-
-            Divider(),
-            Padding(
-              padding: EdgeInsets.all(15),
-              child: InkWell(
-                onTap: () {},
-                child: Text(
-                  'Contact Team',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-              ),
-            ),
-
-            Divider(),
-            Padding(
-              padding: EdgeInsets.all(15),
-              child: InkWell(
-                onTap: () {},
-                child: Text(
-                  'Notification Center',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-              ),
-            ),
-            Divider(),
-            Padding(
-              padding: EdgeInsets.all(15),
-              child: InkWell(
-                onTap: () {},
-                child: Text(
-                  'Settings',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-              ),
-            ),
-            Divider(),
-            SizedBox(height: 200),
-            Divider(),
-            SizedBox(height: 10),
-            ListTile(
-              leading: Icon(Icons.logout, color: Colors.white),
-              title: Text(
-                "Logout",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              onTap: () {},
-            ),
-          ],
-        ),
-      ),
+      drawer: DrawerPage(),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
@@ -187,13 +111,21 @@ class Homepage extends StatelessWidget {
                     child: Row(
                       children: [
                         Expanded(
-                          child: _buildItem(Icons.edit_outlined, "Apply"),
+                          child: buildItem(Icons.edit_outlined, "Apply", () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Applypage(),
+                              ),
+                            );
+                          }),
                         ),
                         Container(width: 1, color: Colors.deepPurple),
                         Expanded(
-                          child: _buildItem(
+                          child: buildItem(
                             Icons.check_circle_outline,
                             "Status",
+                            () {},
                           ),
                         ),
                       ],
@@ -206,11 +138,19 @@ class Homepage extends StatelessWidget {
                     child: Row(
                       children: [
                         Expanded(
-                          child: _buildItem(Icons.description_outlined, "Docs"),
+                          child: buildItem(
+                            Icons.description_outlined,
+                            "Docs",
+                            () {},
+                          ),
                         ),
                         Container(width: 1, color: Colors.deepPurple),
                         Expanded(
-                          child: _buildItem(Icons.send_outlined, "Inquire"),
+                          child: buildItem(
+                            Icons.send_outlined,
+                            "Inquire",
+                            () {},
+                          ),
                         ),
                       ],
                     ),
@@ -277,25 +217,3 @@ class Homepage extends StatelessWidget {
   }
 }
 
-Widget _buildItem(IconData icon, String title) {
-  return InkWell(
-    onTap: () {},
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(icon, size: 35, color: Colors.black87),
-
-        const SizedBox(height: 8),
-
-        Text(
-          title,
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: Color(0xFF2D225A),
-          ),
-        ),
-      ],
-    ),
-  );
-}
