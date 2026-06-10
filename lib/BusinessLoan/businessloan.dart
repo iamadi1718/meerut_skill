@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meerut_skill/customwidgets/CustomDocuments/CustomDocuments.dart';
-import 'package:meerut_skill/customwidgets/inquire/Inquirepage.dart';
+// import 'package:meerut_skill/customwidgets/inquire/Inquirepage.dart';
 
 class BusinessLoanPage extends StatefulWidget {
   const BusinessLoanPage({super.key});

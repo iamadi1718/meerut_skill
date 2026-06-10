@@ -4,6 +4,7 @@ import 'package:meerut_skill/applypage/Applypage.dart';
 import 'package:meerut_skill/customwidgets/BuildBullet/buildBullet.dart';
 import 'package:meerut_skill/customwidgets/BuildItem/buildItem.dart';
 import 'package:meerut_skill/customwidgets/inquire/Inquirepage.dart';
+import 'package:meerut_skill/manage document/managedocument.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -142,7 +143,14 @@ class Homepage extends StatelessWidget {
                           child: buildItem(
                             Icons.description_outlined,
                             "Docs",
-                            () {},
+                            () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Managedocument(),
+                                ),
+                              );
+                            },
                           ),
                         ),
                         Container(width: 1, color: Colors.deepPurple),
