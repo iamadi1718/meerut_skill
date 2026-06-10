@@ -4,7 +4,9 @@ import 'package:meerut_skill/Drawer/Drawer.dart';
 import 'package:meerut_skill/GoldLoan/GoldLoan.dart';
 import 'package:meerut_skill/homeloan/homeloan.dart';
 import 'package:meerut_skill/customwidgets/ApplyCards/ApplyCards.dart';
+import 'package:meerut_skill/homepage/Homepage.dart';
 import 'package:meerut_skill/personalLoan/PersonalLoan.dart';
+import 'package:meerut_skill/profilescreen/Profilepage.dart';
 
 class Applypage extends StatelessWidget {
   const Applypage({super.key});
@@ -154,7 +156,7 @@ class Applypage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const HomeLoanPage(),
+                          builder: (context) => const Homeloan(),
                         ),
                       );
                     },
@@ -175,6 +177,50 @@ class Applypage extends StatelessWidget {
           topRight: Radius.circular(20),
         ),
         child: BottomNavigationBar(
+          onTap: (index) {
+            switch (index) {
+              case 0:
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => const DocumentsPage(),
+                //   ),
+                // );
+                break;
+
+              case 1:
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => const NotificationPage(),
+                //   ),
+                // );
+                break;
+
+              case 2:
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Homepage()),
+                );
+                break;
+
+              case 3:
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => const ChatPage(),
+                //   ),
+                // );
+                break;
+
+              case 4:
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Profilepage()),
+                );
+                break;
+            }
+          },
           type: BottomNavigationBarType.fixed,
           backgroundColor: const Color(0xFF2B1D4F),
           selectedItemColor: Colors.white,

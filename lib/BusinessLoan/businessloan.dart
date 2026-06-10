@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meerut_skill/customwidgets/CustomDocuments/CustomDocuments.dart';
+import 'package:meerut_skill/customwidgets/inquire/Inquirepage.dart';
 
 class BusinessLoanPage extends StatefulWidget {
   const BusinessLoanPage({super.key});
@@ -201,6 +203,7 @@ class _BusinessLoanPageState extends State<BusinessLoanPage> {
                 ],
               ),
             ),
+            const SizedBox(height: 16),
             //Financial Details card
             Container(
               padding: const EdgeInsets.all(16),
@@ -239,6 +242,7 @@ class _BusinessLoanPageState extends State<BusinessLoanPage> {
                 ],
               ),
             ),
+            const SizedBox(height: 16),
             //Loan Details card
             Container(
               padding: const EdgeInsets.all(16),
@@ -277,6 +281,59 @@ class _BusinessLoanPageState extends State<BusinessLoanPage> {
                     labelStyle,
                   ),
                 ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+              width: 406,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.grey.shade300, width: 1.5),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.white.withOpacity(0.25),
+                    blurRadius: 4,
+                    spreadRadius: 1,
+                    offset: Offset(0, 0),
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Upload necessary\ndocuments',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  ),
+                  Customdocuments(text: 'Aadhar Card'),
+                  Customdocuments(text: 'PAN Card'),
+                  Customdocuments(text: 'Property Papers'),
+                  Customdocuments(text: 'Salary slips'),
+                  Customdocuments(text: 'Bank Statements'),
+                  Customdocuments(text: 'NOC Certificates'),
+                  Customdocuments(text: 'Sale Deed'),
+                ],
+              ),
+            ),
+
+            Align(
+              alignment: Alignment.centerRight,
+              child: SizedBox(
+                height: 45,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF3A2B6B),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: const Text(
+                    'Done',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
               ),
             ),
           ],
@@ -326,110 +383,110 @@ class _BusinessLoanPageState extends State<BusinessLoanPage> {
   }
 
   Widget _buildBusinessTypeRadioGrid() {
-    return RadioGroup<String>(
-      groupValue: _businessType,
-      onChanged: (value) {
-        setState(() {
-          _businessType = value;
-        });
-      },
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Radio<String>(
-                      value: 'Proprietorship',
-                      activeColor: Colors.black,
-                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      visualDensity: const VisualDensity(
-                        horizontal: -4,
-                        vertical: -4,
-                      ),
-                    ),
-                    const SizedBox(width: 6),
-                    const Text(
-                      'Proprietorship',
-                      style: TextStyle(fontSize: 15, color: Colors.black87),
-                    ),
-                  ],
-                ),
+    return Column(
+      children: [
+        Row(
+          children: [
+            Expanded(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Radio<String>(
+                    value: 'Proprietorship',
+                    groupValue: _businessType,
+                    onChanged: (value) {
+                      setState(() {
+                        _businessType = value!;
+                      });
+                    },
+
+                    visualDensity: VisualDensity.compact,
+                  ),
+                  const SizedBox(width: 6),
+                  const Text(
+                    'Proprietorship',
+                    style: TextStyle(fontSize: 15, color: Colors.black87),
+                  ),
+                ],
               ),
-              Expanded(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Radio<String>(
-                      value: 'Partnership',
-                      activeColor: Colors.black,
-                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      visualDensity: const VisualDensity(
-                        horizontal: -4,
-                        vertical: -4,
-                      ),
-                    ),
-                    const SizedBox(width: 6),
-                    const Text(
-                      'Partnership',
-                      style: TextStyle(fontSize: 15, color: Colors.black87),
-                    ),
-                  ],
-                ),
+            ),
+            Expanded(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Radio<String>(
+                    value: 'Partnership',
+                    groupValue: _businessType,
+                    onChanged: (value) {
+                      setState(() {
+                        _businessType = value!;
+                      });
+                    },
+
+                    visualDensity: VisualDensity.compact,
+                  ),
+                  const SizedBox(width: 6),
+                  const Text(
+                    'Partnership',
+                    style: TextStyle(fontSize: 15, color: Colors.black87),
+                  ),
+                ],
               ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          Row(
-            children: [
-              Expanded(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Radio<String>(
-                      value: 'LLP',
-                      activeColor: Colors.black,
-                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      visualDensity: const VisualDensity(
-                        horizontal: -4,
-                        vertical: -4,
-                      ),
-                    ),
-                    const SizedBox(width: 6),
-                    const Text(
-                      'LLP',
-                      style: TextStyle(fontSize: 15, color: Colors.black87),
-                    ),
-                  ],
-                ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        Row(
+          children: [
+            Expanded(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Radio<String>(
+                    value: 'LLP',
+                    groupValue: _businessType,
+                    onChanged: (value) {
+                      setState(() {
+                        _businessType = value!;
+                      });
+                    },
+
+                    visualDensity: VisualDensity.compact,
+                  ),
+                  const SizedBox(width: 6),
+                  const Text(
+                    'LLP',
+                    style: TextStyle(fontSize: 15, color: Colors.black87),
+                  ),
+                ],
               ),
-              Expanded(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Radio<String>(
-                      value: 'Private Ltd.',
-                      activeColor: Colors.black,
-                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      visualDensity: const VisualDensity(
-                        horizontal: -4,
-                        vertical: -4,
-                      ),
-                    ),
-                    const SizedBox(width: 6),
-                    const Text(
-                      'Private Ltd.',
-                      style: TextStyle(fontSize: 15, color: Colors.black87),
-                    ),
-                  ],
-                ),
+            ),
+            Expanded(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Radio<String>(
+                    value: 'Private Ltd.',
+                    groupValue: _businessType,
+                    onChanged: (value) {
+                      setState(() {
+                        _businessType = value!;
+                      });
+                    },
+
+                    visualDensity: VisualDensity.compact,
+                  ),
+                  const SizedBox(width: 6),
+                  const Text(
+                    'Private Ltd.',
+                    style: TextStyle(fontSize: 15, color: Colors.black87),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ],
-      ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

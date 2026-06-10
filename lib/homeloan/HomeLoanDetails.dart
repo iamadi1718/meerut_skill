@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Employmentdetails extends StatefulWidget {
-  const Employmentdetails({super.key});
+class Homeloandetails extends StatelessWidget {
+  const Homeloandetails({super.key});
 
-  @override
-  State<Employmentdetails> createState() => _EmploymentdetailsState();
-}
-
-class _EmploymentdetailsState extends State<Employmentdetails> {
-  String? selectedProof = "salaried";
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,53 +25,51 @@ class _EmploymentdetailsState extends State<Employmentdetails> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Employment Details',
+            'Loan Details',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
           ),
           SizedBox(height: 15),
           Row(
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text("Employment Type:"),
-
-                  Row(
-                    children: [
-                      Radio<String>(
-                        value: "salaried",
-                        groupValue: selectedProof,
-                        visualDensity: VisualDensity.compact,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedProof = value!;
-                          });
-                        },
-                      ),
-                      const Text("Salaried"),
-
-                      Radio<String>(
-                        value: "Self-employeed",
-                        visualDensity: VisualDensity.compact,
-                        groupValue: selectedProof,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedProof = value!;
-                          });
-                        },
-                      ),
-                      const Text("Self Employed"),
-                    ],
+              Text('Amount Required'),
+              SizedBox(width: 5),
+              Expanded(
+                child: Container(
+                  width: 280,
+                  height: 25,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(width: 1),
                   ),
-                ],
+                  child: TextField(),
+                ),
               ),
-              SizedBox(height: 15),
+            ],
+          ),
+          SizedBox(height: 15),
+
+          Row(
+            children: [
+              Text('Loan Tenure'),
+              SizedBox(width: 5),
+
+              Expanded(
+                child: Container(
+                  width: 280,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(width: 1),
+                  ),
+                  child: TextField(),
+                ),
+              ),
             ],
           ),
           SizedBox(height: 15),
           Row(
             children: [
-              Text('Company Name'),
+              Text('Down Payment Amount'),
               SizedBox(width: 5),
               Expanded(
                 child: Container(
@@ -95,26 +87,7 @@ class _EmploymentdetailsState extends State<Employmentdetails> {
           SizedBox(height: 15),
           Row(
             children: [
-              Text('Job Title'),
-              SizedBox(width: 5),
-
-              Expanded(
-                child: Container(
-                  width: 280,
-                  height: 25,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    border: Border.all(width: 1),
-                  ),
-                  child: TextField(),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 15),
-          Row(
-            children: [
-              Text('Work Experience'),
+              Text('Co-Applicant"s Name'),
               SizedBox(width: 5),
               Expanded(
                 child: Container(
@@ -132,7 +105,7 @@ class _EmploymentdetailsState extends State<Employmentdetails> {
           SizedBox(height: 15),
           Row(
             children: [
-              Text('Monthly Income'),
+              Text('Co-Applicant"s Age'),
               SizedBox(width: 5),
               Expanded(
                 child: Container(
@@ -143,6 +116,64 @@ class _EmploymentdetailsState extends State<Employmentdetails> {
                     border: Border.all(width: 1),
                   ),
                   child: TextField(),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 15),
+          Row(
+            children: [
+              Text('Co-Applicant"s Gender'),
+              SizedBox(width: 5),
+              Expanded(
+                child: Container(
+                  width: 280,
+                  height: 25,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(width: 1),
+                  ),
+                  child: TextField(),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 15),
+          Row(
+            children: [
+              Text('Co-Applicant"s Occupation'),
+              SizedBox(width: 5),
+              Expanded(
+                child: Container(
+                  width: 280,
+                  height: 25,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(width: 1),
+                  ),
+                  child: TextField(),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 15),
+          Row(
+            children: [
+              Text('Co-Applicant"s Income'),
+              SizedBox(width: 5),
+              Expanded(
+                child: Container(
+                  width: 280,
+                  height: 25,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(width: 1),
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: '(yearly)'
+                    ),
+                  ),
                 ),
               ),
             ],

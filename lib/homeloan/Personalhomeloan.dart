@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Personalinformation extends StatelessWidget {
-  const Personalinformation({super.key});
+class Personalhomeloan extends StatefulWidget {
+  const Personalhomeloan({super.key});
 
+  @override
+  State<Personalhomeloan> createState() => _PersonalhomeloanState();
+}
+
+class _PersonalhomeloanState extends State<Personalhomeloan> {
+  String? employment = "Salaried";
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,7 +17,7 @@ class Personalinformation extends StatelessWidget {
       width: 406,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-       border: Border.all(color: Colors.grey.shade300, width: 1.5),
+        border: Border.all(color: Colors.grey.shade300, width: 1.5),
         boxShadow: [
           BoxShadow(
             color: Colors.white.withOpacity(0.25),
@@ -222,20 +228,70 @@ class Personalinformation extends StatelessWidget {
           SizedBox(height: 15),
           Row(
             children: [
-              Text('Permanent Address'),
+              Text('PAN Number'),
               SizedBox(width: 5),
               Expanded(
                 child: Container(
-                  width: 240,
-                  height: 72,
+                  width: 280,
+                  height: 25,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(width: 1),
                   ),
-                  child: TextField(
-                    decoration: InputDecoration(border: InputBorder.none),
-                  ),
+                  child: TextField(),
                 ),
+              ),
+            ],
+          ),
+          SizedBox(height: 15),
+          Row(
+            children: [
+              Text('Aadhar Number'),
+              SizedBox(width: 5),
+              Expanded(
+                child: Container(
+                  width: 280,
+                  height: 25,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(width: 1),
+                  ),
+                  child: TextField(),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 15),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Employment Type:'),
+              SizedBox(height: 5),
+              Row(
+                children: [
+                  Radio<String>(
+                    value: "Salaried",
+                    groupValue: employment,
+                    visualDensity: VisualDensity.compact,
+                    onChanged: (value) {
+                      setState(() {
+                        employment = value!;
+                      });
+                    },
+                  ),
+                  const Text('Salaried'),
+                  Radio<String>(
+                    value: "Self-employeed",
+                    groupValue: employment,
+                    visualDensity: VisualDensity.compact,
+                    onChanged: (value) {
+                      setState(() {
+                        employment = value!;
+                      });
+                    },
+                  ),
+                  const Text('Self-employeed'),
+                ],
               ),
             ],
           ),

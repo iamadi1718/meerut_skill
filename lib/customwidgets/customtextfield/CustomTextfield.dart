@@ -23,6 +23,7 @@ class Customtextfield extends StatelessWidget {
             decoration: InputDecoration(
               hintText: text,
               border: InputBorder.none,
+              contentPadding: EdgeInsets.only(left: 5),
             ),
           ),
         ),

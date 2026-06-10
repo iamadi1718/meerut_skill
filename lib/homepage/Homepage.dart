@@ -3,6 +3,7 @@ import 'package:meerut_skill/Drawer/Drawer.dart';
 import 'package:meerut_skill/applypage/Applypage.dart';
 import 'package:meerut_skill/customwidgets/BuildBullet/buildBullet.dart';
 import 'package:meerut_skill/customwidgets/BuildItem/buildItem.dart';
+import 'package:meerut_skill/customwidgets/inquire/Inquirepage.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -20,7 +21,7 @@ class Homepage extends StatelessWidget {
               children: [
                 // Purple Header
                 Container(
-                  height: 180,
+                  height: 230,
                   width: double.infinity,
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
@@ -31,7 +32,7 @@ class Homepage extends StatelessWidget {
 
                 // Menu Icon
                 Positioned(
-                  top: 50,
+                  top: 40,
                   left: 20,
                   child: Builder(
                     builder:
@@ -50,15 +51,15 @@ class Homepage extends StatelessWidget {
 
                 // White Curved Section
                 Positioned(
-                  top: 80,
+                  top: 130,
                   left: 0,
                   right: 0,
                   child: Container(
-                    height: 120,
+                    height: 100,
                     decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(140),
+                        top: Radius.circular(85),
                       ),
                     ),
                   ),
@@ -66,7 +67,7 @@ class Homepage extends StatelessWidget {
 
                 // Floating Quick Stats Card
                 Positioned(
-                  top: 45,
+                  top: 100,
                   left: 0,
                   right: 0,
                   child: Center(
@@ -100,6 +101,7 @@ class Homepage extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(height: 20),
             Container(
               width: 280,
               height: 180,
@@ -145,11 +147,14 @@ class Homepage extends StatelessWidget {
                         ),
                         Container(width: 1, color: Colors.deepPurple),
                         Expanded(
-                          child: buildItem(
-                            Icons.send_outlined,
-                            "Inquire",
-                            () {},
-                          ),
+                          child: buildItem(Icons.send_outlined, "Inquire", () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Inquirepage(),
+                              ),
+                            );
+                          }),
                         ),
                       ],
                     ),

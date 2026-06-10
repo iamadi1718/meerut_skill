@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Employmentdetails extends StatefulWidget {
-  const Employmentdetails({super.key});
+class Incomedetails extends StatefulWidget {
+  const Incomedetails({super.key});
 
   @override
-  State<Employmentdetails> createState() => _EmploymentdetailsState();
+  State<Incomedetails> createState() => _IncomedetailsState();
 }
 
-class _EmploymentdetailsState extends State<Employmentdetails> {
-  String? selectedProof = "salaried";
+class _IncomedetailsState extends State<Incomedetails> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,53 +30,13 @@ class _EmploymentdetailsState extends State<Employmentdetails> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Employment Details',
+            'Income Details',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
           ),
           SizedBox(height: 15),
           Row(
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text("Employment Type:"),
-
-                  Row(
-                    children: [
-                      Radio<String>(
-                        value: "salaried",
-                        groupValue: selectedProof,
-                        visualDensity: VisualDensity.compact,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedProof = value!;
-                          });
-                        },
-                      ),
-                      const Text("Salaried"),
-
-                      Radio<String>(
-                        value: "Self-employeed",
-                        visualDensity: VisualDensity.compact,
-                        groupValue: selectedProof,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedProof = value!;
-                          });
-                        },
-                      ),
-                      const Text("Self Employed"),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 15),
-            ],
-          ),
-          SizedBox(height: 15),
-          Row(
-            children: [
-              Text('Company Name'),
+              Text('Monthly Income'),
               SizedBox(width: 5),
               Expanded(
                 child: Container(
@@ -93,9 +52,10 @@ class _EmploymentdetailsState extends State<Employmentdetails> {
             ],
           ),
           SizedBox(height: 15),
+
           Row(
             children: [
-              Text('Job Title'),
+              Text('Employer Name'),
               SizedBox(width: 5),
 
               Expanded(
@@ -132,7 +92,7 @@ class _EmploymentdetailsState extends State<Employmentdetails> {
           SizedBox(height: 15),
           Row(
             children: [
-              Text('Monthly Income'),
+              Text('ITR(2-3 yrs)'),
               SizedBox(width: 5),
               Expanded(
                 child: Container(

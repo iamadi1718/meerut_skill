@@ -17,7 +17,7 @@ class _UploaddocumentsState extends State<Uploaddocuments> {
       width: 406,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(width: 1, color: Colors.grey),
+        border: Border.all(color: Colors.grey.shade300, width: 1.5),
         boxShadow: [
           BoxShadow(
             color: Colors.white.withOpacity(0.25),
@@ -30,6 +30,10 @@ class _UploaddocumentsState extends State<Uploaddocuments> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Text(
+            'Upload necessary\ndocuments',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+          ),
           Customdocuments(text: 'Aadhar Card'),
           Customdocuments(text: 'PAN Card'),
           Customdocuments(text: 'Property Papers'),

@@ -5,13 +5,13 @@ class Goldassetdetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     return Container(
+    return Container(
       margin: EdgeInsets.all(16),
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 16),
       width: 406,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(width: 1, color: Colors.grey),
+        border: Border.all(color: Colors.grey.shade300, width: 1.5),
         boxShadow: [
           BoxShadow(
             color: Colors.white.withOpacity(0.25),
@@ -120,10 +120,8 @@ class Goldassetdetails extends StatelessWidget {
               ),
             ],
           ),
-          
         ],
       ),
     );
-  
   }
 }

@@ -17,7 +17,7 @@ class _GoldLoanDetailsState extends State<GoldLoanDetails> {
       width: 406,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(width: 1, color: Colors.grey),
+        border: Border.all(color: Colors.grey.shade300, width: 1.5),
         boxShadow: [
           BoxShadow(
             color: Colors.white.withOpacity(0.25),
