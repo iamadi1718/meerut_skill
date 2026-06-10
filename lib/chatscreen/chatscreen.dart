@@ -108,11 +108,21 @@ class RecentChatsScreen extends StatelessWidget {
           onTap: (index) {
             switch (index) {
               case 0:
-                // Documents Page
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => const DocumentsPage(),
+                //   ),
+                // );
                 break;
 
               case 1:
-                // Notification Page
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => const NotificationPage(),
+                //   ),
+                // );
                 break;
 
               case 2:
