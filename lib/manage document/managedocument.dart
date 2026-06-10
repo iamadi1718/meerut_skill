@@ -3,6 +3,7 @@ import 'package:meerut_skill/Drawer/Drawer.dart';
 import 'package:meerut_skill/customwidgets/CustomDocuments/CustomDocuments.dart';
 import 'package:meerut_skill/homepage/Homepage.dart';
 import 'package:meerut_skill/profilescreen/Profilepage.dart';
+import 'package:meerut_skill/chatscreen/chatscreen.dart';
 
 class Managedocument extends StatelessWidget {
   const Managedocument({super.key});
@@ -154,12 +155,12 @@ class Managedocument extends StatelessWidget {
                 break;
 
               case 3:
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => const ChatPage(),
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const RecentChatsScreen(),
+                  ),
+                );
                 break;
 
               case 4:

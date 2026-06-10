@@ -7,6 +7,7 @@ import 'package:meerut_skill/customwidgets/ApplyCards/ApplyCards.dart';
 import 'package:meerut_skill/homepage/Homepage.dart';
 import 'package:meerut_skill/personalLoan/PersonalLoan.dart';
 import 'package:meerut_skill/profilescreen/Profilepage.dart';
+import 'package:meerut_skill/chatscreen/chatscreen.dart';
 
 class Applypage extends StatelessWidget {
   const Applypage({super.key});
@@ -205,12 +206,12 @@ class Applypage extends StatelessWidget {
                 break;
 
               case 3:
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => const ChatPage(),
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const RecentChatsScreen(),
+                  ),
+                );
                 break;
 
               case 4:
